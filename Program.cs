@@ -47,8 +47,14 @@ namespace TextEditor
             string text = "";
 
             //Para armazenar o que o usuário digita
-            while (Console.ReadKey().Key != ConsoleKey.Escape)
+            do
+            {
+                text += Console.ReadLine();
+                text += Environment.NewLine; //A gente tá quebrando a linha no fim de cada leitura do Console.Readline()
+            }
+            while (Console.ReadKey().Key != ConsoleKey.Escape); // Faça isso enquanto o usuário não pressionar a tecla escape
 
+            Console.Write(text);
         }
     }
 }
