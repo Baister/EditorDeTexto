@@ -41,6 +41,13 @@ namespace TextEditor
         }
         static void Editar()
         {
+            Console.Clear();
+            Console.WriteLine("Digite o seu texto abaixo: (ESC para sair)");
+            Console.WriteLine("---------------------------");
+            string text = "";
+
+            //Para armazenar o que o usuário digita
+            while (Console.ReadKey().Key != ConsoleKey.Escape)
 
         }
     }
