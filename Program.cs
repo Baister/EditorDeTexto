@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace TextEditor
 {
@@ -54,7 +55,19 @@ namespace TextEditor
             }
             while (Console.ReadKey().Key != ConsoleKey.Escape); // Faça isso enquanto o usuário não pressionar a tecla escape
 
-            Console.Write(text);
+            Console.Write(text); // Só para dar um push
+        }
+
+        static void Salvar(string text)
+        {
+            Console.Clear();
+            Console.WriteLine("Qual caminho para salvar o arquivo? ");
+            var path = Console.ReadLine();
+
+            using (var file = new StreamWriter(path))
+            {
+                file.Write(text);
+            } //O using já abre e fecha o arquivo// Todo objeto que colocar dentro do using, ele já vai abrir e fechar o objeto            
         }
     }
 }
