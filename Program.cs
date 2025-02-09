@@ -55,7 +55,7 @@ namespace TextEditor
             }
             while (Console.ReadKey().Key != ConsoleKey.Escape); // Faça isso enquanto o usuário não pressionar a tecla escape
 
-            Console.Write(text); // Só para dar um push
+            Salvar(text);//Console.Write(text); // Só para dar um push
         }
 
         static void Salvar(string text)
@@ -68,6 +68,9 @@ namespace TextEditor
             {
                 file.Write(text);
             } //O using já abre e fecha o arquivo// Todo objeto que colocar dentro do using, ele já vai abrir e fechar o objeto            
+            Console.WriteLine($"O arquivo {path} foi salvo com sucesso!");
+            Console.ReadLine();
+            Menu();
         }
     }
 }
